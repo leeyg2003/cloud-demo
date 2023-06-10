@@ -1,0 +1,14 @@
+#cloud-demo/eureka-server/src/main/resources/application.yml
+server:
+  port: 10086    #服务端口
+spring:
+  application:
+    name: eureka-server    #eureka的服务名称
+eureka:
+  client:
+    service-url: #eureka的地址信息
+      defaultZone: http://127.0.0.1:10086/eureka    #这个位置以后会配置eureka集群的地址，如果有多个会用逗号隔开    
+
+  #eureka配置自己的地址信息的原因，因为eureka自己也是一个微服务，所以在启动的时候也会把自己注册到eureka上，这是为了将来eureka集群之间通信用的
+
+#是为了做服务注册才配置的这个信息
